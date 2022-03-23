@@ -10,3 +10,18 @@ for file in $files; do
   if test -e "..$file";then
      echo $HOME$file >>oldFiles.txt;fi
 done
+********************
+
+changeJane.py
+********************
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+f = open(sys.argv[1],"r")
+for line in f.readlines():
+  oldname = line.strip()
+  newname = oldname.replace("jane","jdoe")
+  subprocess.run(["mv", oldname. newname])
+f.close()
+********************
